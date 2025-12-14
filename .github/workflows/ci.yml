@@ -1,3 +1,8 @@
+- name: Install dependencies
+  run: yarn install --frozen-lockfile
+
+- name: Build React app
+  run: yarn build
 name: React CI Pipeline
 
 on:
@@ -20,7 +25,7 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
+         run: yarn install --frozen-lockfile
 
-      - name: Build React app
-        run: npm run build
+- name: Build React app
+  run: yarn build
