@@ -28,5 +28,13 @@ jobs:
       - name: Build React app
         run: yarnpkg build
 
+            - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       - name: Build Docker image
-        run: docker build -t todo-react-app .
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: false
+          tags: todo-react-app:latest
+
