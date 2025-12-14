@@ -20,8 +20,8 @@ jobs:
           node-version: 18
 
        - name: Install dependencies
-  run: yarn install --frozen-lockfile
+  run: yarnpkg install --frozen-lockfile
 
 - name: Build React app
-  run: yarn build
+  run: yarnpkg build
 
