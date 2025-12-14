@@ -19,9 +19,12 @@ jobs:
         with:
           node-version: 18
 
-       - name: Install dependencies
-  run: yarnpkg install --frozen-lockfile
+      - name: Install Yarn
+        run: sudo apt-get update && sudo apt-get install -y yarnpkg
 
-- name: Build React app
-  run: yarnpkg build
+      - name: Install dependencies
+        run: yarnpkg install --frozen-lockfile
+
+      - name: Build React app
+        run: yarnpkg build
 
